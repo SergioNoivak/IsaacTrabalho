@@ -1,0 +1,107 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+
+<section class="py-5 bg-primary text-light">
+    <div class="container">
+        <div class="row">
+            <h2>Bem vindo [(nome de usuario)]</h2>
+        </div>
+    </div>
+</section>
+<section class="services py-5   1 text-center">
+    <div class="container">
+       <div class="row bg-medicos">
+           <div class="col-xs-12 col-sm-6 col-md-3">
+               <a [routerLink]="[ '/criar-medico' ]" class="text-body">
+    		    <div class="card    mb-3">
+    		        <div class="card-body">
+    		           <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-add-circle-outline.svg" alt="">
+                    	<h5>Criar médico</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-3">
+            <a [routerLink]="[ '/consultar-medico' ]" class="text-body">
+
+    		    <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-search.svg" alt="">
+
+                  <h5>Consultar Médico</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-3">
+            <a [routerLink]="[ '/editar-medico' ]" class="text-body">
+              <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-create.svg" alt="">
+                    	<h5>Editar médico</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-3">
+            <a [routerLink]="[ '/deletar-medico' ]" class="text-body">
+              <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-trash.svg" alt="">
+                    <h5>Deletar médico</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   
+       </div>
+       <div class="row pt-4 bg-veiculos">
+           <div class="col-xs-12 col-sm-6 col-md-3">
+              <a [routerLink]="[ '/criar-veiculo' ]" class="text-body">
+                <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-add-circle-outline.svg" alt="">
+                    <h5>Criar Veículo</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-3">
+            <a [routerLink]="[ '/consultar-veiculo' ]" class="text-body">
+              <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-search.svg" alt="">
+                    	<h5>Consultar veículo</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-3">
+            <a [routerLink]="[ '/editar-veiculo' ]" class="text-body">
+              <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-create.svg" alt="">
+                    <h5>Editar veículo</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-3">
+            <a [routerLink]="[ '/deletar-veiculo' ]" class="text-body">
+              <div class="card    mb-3">
+    		        <div class="card-body">
+                    <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-trash.svg" alt="">
+                    <h5>Deletar veículo</h5>
+    		        </div>
+    		    </div>
+    		   </a>
+    		</div>
+    	   
+       </div>
+       
+    </div>
+</section>

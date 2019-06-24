@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-gray">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">
+
+      
+    </a>
+   <a [routerLink]="[ '/home']">
+    <div class="background-logo">
+      
+      <img height="50px" width="50px" src="../../assets/icons/_ionicons_svg_md-book.svg" alt="">
+      T.E.W.
+    </div>
+    
+  </a>
+
+    <div class="collapse navbar-collapse ml-5" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a [routerLink]="[ '/minha-conta']" name="" id="" class="btn btn-success" href="#" role="button">Minha Conta</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-danger my-2 my-sm-0" type="submit">Sair</button>
+      </form>
+    </div>
+  </nav>
