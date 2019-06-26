@@ -17,6 +17,17 @@ import { EditarMedicoComponent } from './editar-medico/editar-medico.component';
 import { EditarVeiculoComponent } from './editar-veiculo/editar-veiculo.component';
 import { DeletarMedicoComponent } from './deletar-medico/deletar-medico.component';
 import { DeletarVeiculoComponent } from './deletar-veiculo/deletar-veiculo.component';
+import { CriarMedicoService } from './criar-medico/criar-medico.service';
+import { CriarVeiculoService } from './criar-veiculo/criar-veiculo.service';
+import { ConsultarMedicoService } from './consultar-medico/consultar-medico.service';
+import { ConsultarVeiculoService } from './consultar-veiculo/consultar-veiculo.service';
+import { EditarMedicoService } from './editar-medico/editar-medico.service';
+import { EditarVeiculoService } from './editar-veiculo/editar-veiculo.service';
+import { DeletarMedicoService } from './deletar-medico/deletar-medico.service';
+import { DeletarVeiculoService } from './deletar-veiculo/deletar-veiculo.service';
+import { CriarContaService } from './criar-conta/criar-conta.service';
+import { NgModel, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; 
 
 
 @NgModule({
@@ -40,9 +51,24 @@ import { DeletarVeiculoComponent } from './deletar-veiculo/deletar-veiculo.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
     
   ],
-  providers: [],
+  providers: [
+    CriarMedicoService,
+    CriarVeiculoService,
+    ConsultarMedicoService,
+    ConsultarVeiculoService,
+    EditarMedicoService,
+    EditarVeiculoService,
+    DeletarMedicoService,
+    DeletarVeiculoService,
+    CriarContaService,
+    
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
