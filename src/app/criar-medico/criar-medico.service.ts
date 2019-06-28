@@ -13,7 +13,12 @@ export class CriarMedicoService {
   public cadastrarMedico(medico:Medico){
 
     console.log(`${api.url}`)
-     this.http.post<any>('http://localhost:8080/criar-medico/',medico, 
-    { headers: new HttpHeaders({ 'Content-Type': 'application/json' })}).subscribe();   
+    let that = this;
+     this.http.post<any>('http://localhost:8080/api/criar-medico/',medico, 
+    { headers: new HttpHeaders({ 'Content-Type': 'application/json' })}).subscribe((resposta:any)=>{
+
+      console.log(resposta)
+
+        });   
   }
 }

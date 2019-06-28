@@ -40,7 +40,6 @@ export class CriarMedicoComponent implements OnInit {
 
   onSubmit() {
 
-    console.log(this.medicoFormulario);
     let medico: Medico = new Medico(
       this.medicoFormulario.value.nome,
       this.medicoFormulario.value.CRM,
@@ -49,7 +48,7 @@ export class CriarMedicoComponent implements OnInit {
       this.medicoFormulario.value.predio,
       this.medicoFormulario.value.setor);
 
-     this.criarMedicoService.cadastrarMedico(medico);
+      this.criarMedicoService.cadastrarMedico(medico);
 
 
 
