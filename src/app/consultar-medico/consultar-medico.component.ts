@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultarMedicoService } from './consultar-medico.service';
 
 @Component({
   selector: 'app-consultar-medico',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsultarMedicoComponent implements OnInit {
 
-  constructor() { }
 
+  capacity=30;
+  constructor(private consultarMedicoService:ConsultarMedicoService) {   
+     
+
+    let p =new Promise( resolve =>{ setTimeout(resolve,500); } );
+    p.then(()=> this.capacity=60)
+    this.consultarMedicoService.getAllMedico().subscribe(response => {
+    this.capacity=70;  
+    this.medicos = response.resultado;
+    this.capacity=100;  
+
+  })}
+  medicos:any;
   ngOnInit() {
+
+
+    
   }
+
+  
 
 }
