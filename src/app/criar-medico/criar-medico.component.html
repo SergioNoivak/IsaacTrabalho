@@ -13,6 +13,8 @@
         </div>
 
         <h4 class="card-title text-center">Criar médico</h4>
+        <div [hidden]="dadosValidos" class="alert alert-danger">Os dados estão inválidos </div>
+        <div [hidden]="!dadosCadastrados" class="alert alert-success">O médico foi cadastrado com sucesso </div>
 
         <form [formGroup]="medicoFormulario" (ngSubmit)="onSubmit()">
 

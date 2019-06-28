@@ -19,6 +19,9 @@ import Medico from '../../../model/Medico';
 
 
 export class CriarMedicoComponent implements OnInit {
+
+  dadosValidos = true;
+  dadosCadastrados = false;
   medicoFormulario = this.fb.group({
 
     nome: [''],
@@ -48,12 +51,11 @@ export class CriarMedicoComponent implements OnInit {
       this.medicoFormulario.value.predio,
       this.medicoFormulario.value.setor);
 
-      this.criarMedicoService.cadastrarMedico(medico);
+this.criarMedicoService.cadastrarMedico(medico).subscribe(response => {
+  this.dadosValidos = response.success;
+  this.dadosCadastrados = response.success;
+})
 
-
-
-
-  }
-
+    }
 
 }
