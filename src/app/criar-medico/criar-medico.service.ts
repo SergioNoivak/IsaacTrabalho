@@ -9,6 +9,7 @@ import Medico from '../../../model/Medico';
 export class CriarMedicoService {
 
   constructor(private http:HttpClient) {}
+  dadosCadastrados = false;
 
   public cadastrarMedico(medico:Medico){
 
