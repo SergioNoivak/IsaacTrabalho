@@ -1,12 +1,6 @@
 <div class="container">
     <div class="offset-2 col-8 mt-5">
 
-
-
-
-
-
-
       <div class="card cartao-login bg-gray" >
 <div class="text-center mt-2">
 
@@ -37,20 +31,21 @@
                 </div>
               </form>
             </div>
-  
+            <div  [hidden]="!editadoComSucesso" class="alert alert-success">Editado com sucesso</div>
+
           <div class="form-group">
             <label for="">nome</label>
-            <input [readonly]="!podeEditar" [(ngModel)]="nome" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <input [readonly]="!podeEditar" [(ngModel)]="medico.nome" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
           </div>
   
           <div class="form-group">
             <label for="">CRM</label>
-            <input [readonly]="!podeEditar" [(ngModel)]="CRM" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <input [readonly]="!podeEditar" [(ngModel)]="medico.CRM" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
 
           </div>
           <div class="form-group ">
               <label for="inputState">Período de atendimento</label>
-              <select [hidden]="!CPFexiste" [(ngModel)]="periodoAtendimento" id="inputState" class="form-control">
+              <select [hidden]="!podeEditar" [(ngModel)]="medico.periodoAtendimento" id="inputState" class="form-control">
                 <option selected>Matutino</option>
                 <option>Vespertino</option>
                 <option>Noturno</option>
@@ -60,34 +55,22 @@
           
             <div class="form-group">
                 <label for="">CPF</label>
-                <input [readonly]="!podeEditar" [(ngModel)]="CPF" type="number" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                <input [readonly]="!podeEditar" [(ngModel)]="medico.CPF" type="number" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
               </div>
 
               <div class="form-group">
                   <label for="">Prédio de atendimento</label>
-                  <input [readonly]="!podeEditar" [(ngModel)]="predio"  type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input [readonly]="!podeEditar" [(ngModel)]="medico.predio"  type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
                 </div>
   
                 <div class="form-group">
                     <label for="">Setor de atendimento</label>
-                  <input [readonly]="!podeEditar" [(ngModel)]="setor" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <input [readonly]="!podeEditar" [(ngModel)]="medico.setor" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
                   </div>
-    
-    
-  
-
-
-
-          <button type="button" class=" ml-2 btn btn-primary btn-lg">Salvar</button>
-  
+          <button (click)="salvar()" type="button" class=" ml-2 btn btn-primary btn-lg">Salvar</button>  
         </div>
-  
-  
-  
+
   </div>
     </div>
-  
-  
-  
   </div>
   

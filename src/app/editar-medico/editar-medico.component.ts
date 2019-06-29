@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EditarVeiculoService } from '../editar-veiculo/editar-veiculo.service';
 import { EditarMedicoService } from './editar-medico.service';
+import Medico from '../../../model/Medico';
 
 @Component({
   selector: 'app-editar-medico',
@@ -8,23 +8,15 @@ import { EditarMedicoService } from './editar-medico.service';
   styleUrls: ['./editar-medico.component.scss']
 })
 export class EditarMedicoComponent implements OnInit {
+  editadoComSucesso:boolean = false;
   CPFbusca:any;
-  
-  nome:any="";
-  CRM:any="";
-  CPF:any=0;
-  predio:any="";
-  setor:any="";
-  periodoAtendimento:any="Vespertino"
-  
+  medico:Medico;  
   CPFexiste:boolean = true;
   podeEditar = false;
-
-
   
   
   constructor(private editarMedicoService:EditarMedicoService) { 
- 
+    this.medico = new Medico("","","Vespertino",0,"","");
   }
 
   ngOnInit() {
@@ -35,21 +27,22 @@ export class EditarMedicoComponent implements OnInit {
       
       if(response.result){
         this.podeEditar=true;
-        this.nome = response.result.nome ; 
-        this.CRM = response.result.CRM ; 
-        this.CPF = response.result.CPF ; 
-        this.predio = response.result.predio ; 
-        this.setor = response.result.setor ; 
-        this.periodoAtendimento = response.result.periodoAtendimento;
+        this.medico.nome = response.result.nome ; 
+        this.medico.CRM = response.result.CRM ; 
+        this.medico.CPF = response.result.CPF ; 
+        this.medico.predio = response.result.predio ; 
+        this.medico.setor = response.result.setor ; 
+        this.medico.periodoAtendimento = response.result.periodoAtendimento;
         this.CPFexiste = true;
         this.podeEditar=true;
 
 
       }
-      if(response.result==null){
+     else if(response.result==null){
         this.CPFexiste = false;
         this.zerar();
         this.podeEditar=false
+        this.editadoComSucesso= false;
       }
      
       console.log(response)
@@ -57,13 +50,20 @@ export class EditarMedicoComponent implements OnInit {
   }
 
   zerar(){
+      this.medico.zerar();
+  }
 
-    this.nome="";
-    this.CRM="";
-    this.CPF=0;
-    this.predio="";
-    this.setor="";
-    this.periodoAtendimento="Vespertino";
+  salvar(){
+    console.log("dsadas") ;
+      this.editarMedicoService.setMedico(this.medico,this.CPFbusca).subscribe(response => {
+        this.editadoComSucesso=true;
+      this.medico.zerar();
+        
+      })
+      
+
+
+
   }
 
 }

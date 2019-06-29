@@ -19,4 +19,16 @@ export default class Medico{
         this.setor=setor;
     }
 
+
+    public zerar(){
+
+        this.nome="";
+        this.CRM="";
+        this.CPF=0;
+        this.predio="";
+        this.setor="";
+        this.periodoAtendimento="Vespertino";
+
+    }
+
 }   
