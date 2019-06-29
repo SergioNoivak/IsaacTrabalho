@@ -1,6 +1,6 @@
 <div class="container">
-    <div class=" col-12 mt-5">
-  
+    <div class="offset-2 col-8 mt-5">
+
       <div class="card cartao-login bg-gray" >
 <div class="text-center mt-2">
 
@@ -15,55 +15,62 @@
           <h4 class="card-title text-center">Deletar médico</h4>
 
 
-<table class="table  table-inverse ">
-  <thead class="thead-inverse">
-    <tr>
-      <th>nome</th>
-      <th>CRM</th>
-      <th>Período de atendimento</th>
-      <th>CPF</th>
-      <th>Predio</th>
-      <th>Setor</th>
-      <th>Ação</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td scope="row">b</td>
-        <td>b</td>
-        <td>b</td>
-        <td>b</td>
-        <td>b</td>
-        <td>b</td>
-  <td><a name="" id="" class="btn btn-danger" href="#" role="button"> <img width="32px" height="32px" src="../../assets/icons/_ionicons_svg_md-trash.svg" alt="">
-  Deletar</a></td>
+          <div class="jumbotron">
+              <p class="lead">  Para Deletar um médico você precisará busca-lo segundo o CPF dele.
+            </p>
+            <div  [hidden]="CPFexiste" class="alert alert-danger">Este CPF não está cadastrado</div>
 
-      </tr>
-      <tr>
-        <td scope="row">b</td>
-        <td>b</td>
-        <td>b</td>
-        <td>b</td>
-        <td>b</td>
-        <td>b</td>
-        <td><a name="" id="" class="btn btn-danger" href="#" role="button"> <img width="32px" height="32px" src="../../assets/icons/_ionicons_svg_md-trash.svg" alt="">
-          Deletar</a></td>
-        
-      </tr>
-    </tbody>
-</table>
+            <form class="form-inline">
+                <div class="form-group">
+                  <label class="mr-3" for="">CPF:</label>
+                  <input [(ngModel)]="CPFbusca" type="text" name="CPF" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  <button (click)="buscar()" type="button" class=" ml-2 btn btn-primary btn-md">
+                    <img height="32px" width="32px" src="../../assets/icons/_ionicons_svg_md-search.svg" alt="">
+                    Buscar</button>
+          
+                </div>
+              </form>
+            </div>
+            <div  [hidden]="!editadoComSucesso" class="alert alert-success">Deletado com sucesso</div>
+
+          <div class="form-group">
+            <label for="">nome</label>
+            <input readonly [(ngModel)]="medico.nome" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+          </div>
   
+          <div class="form-group">
+            <label for="">CRM</label>
+            <input readonly [(ngModel)]="medico.CRM" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+
+          </div>
+          <div class="form-group ">
+              <label for="inputState">Período de atendimento</label>
+              <select  [(ngModel)]="medico.periodoAtendimento" id="inputState" class="form-control">
+                <option selected>Matutino</option>
+                <option>Vespertino</option>
+                <option>Noturno</option>
+              </select>
+            </div>
+
+          
+            <div class="form-group">
+                <label for="">CPF</label>
+                <input readonly [(ngModel)]="medico.CPF" type="number" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+              </div>
+
+              <div class="form-group">
+                  <label for="">Prédio de atendimento</label>
+                  <input readonly [(ngModel)]="medico.predio"  type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                </div>
+  
+                <div class="form-group">
+                    <label for="">Setor de atendimento</label>
+                  <input readonly [(ngModel)]="medico.setor" type="text" name="" id="" class="form-control" placeholder="" aria-describedby="helpId">
+                  </div>
+          <button (click)="salvar()" type="button" class=" ml-2 btn btn-primary btn-lg">Salvar</button>  
         </div>
-  
-  
-  
+
   </div>
     </div>
-  
-  
-  
   </div>
   
-
-
-
