@@ -1,3 +1,69 @@
-<p>
-  criar-veiculo works!
-</p>
+<div class="container">
+    <div class="offset-2 col-8 mt-5">
+  
+      <div class="card cartao-login bg-gray">
+        <div class="text-center mt-2">
+  
+          <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-add-circle-outline.svg" alt="">
+        </div>
+  
+        <div class="card-body">
+          <div class="text-center">
+  
+          </div>
+  
+          <h4 class="card-title text-center">Criar veículo</h4>
+          <div [hidden]="dadosValidos" class="alert alert-danger">Os dados estão inválidos </div>
+          <div [hidden]="!dadosCadastrados" class="alert alert-success">O veiculo foi cadastrado com sucesso </div>
+  
+          <form [formGroup]="veiculoFormulario" (ngSubmit)="onSubmit()">
+  
+            <div class="form-group">
+              <label for="">modelo</label>
+              <input  formControlName="modelo"  type="text" name="nome" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+  
+            <div class="form-group">
+              <label for="">montadora</label>
+              <input formControlName="montadora"  type="text" name="CRM" id="" class="form-control" placeholder="" aria-describedby="helpId">
+  
+            </div>
+            <div class="form-group ">
+              <label for="inputState">Cambio</label>
+              <select formControlName="cambio"  name="periodoAtendimento" id="inputState" class="form-control">
+                <option selected>Manual</option>
+                <option>Automático</option>
+              </select>
+            </div>
+  
+  
+            <div class="form-group">
+              <label for="">numero de serie</label>
+              <input formControlName="numeroSerie"  type="number" name="CPF" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+  
+            <div class="form-group">
+              <label for="">Proprietario</label>
+              <input formControlName="proprietario"  type="text" name="predio" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+  
+            <div class="form-group">
+              <label for="">Ano de fabricação</label>
+              <input formControlName="ano"  type="number" name="setor" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            </div>
+  
+  
+            <button type="submit" class=" ml-2 btn btn-primary btn-lg">Salvar</button>
+  
+          </form>
+        </div>
+  
+  
+  
+      </div>
+    </div>
+  
+  
+  
+  </div>
+  
