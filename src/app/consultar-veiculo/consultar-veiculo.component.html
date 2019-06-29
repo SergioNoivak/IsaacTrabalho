@@ -1,3 +1,59 @@
-<p>
-  consultar-veiculo works!
-</p>
+<div class="container">
+    <div class=" col-12 mt-5">
+  
+      <div class="card cartao-login bg-gray" >
+<div class="text-center mt-2">
+
+  <img width="64px" height="64px" src="../../assets/icons/_ionicons_svg_md-search.svg" alt="">
+</div>
+
+        <div class="card-body">
+          <div class="text-center">
+  
+          </div>
+  
+          <h4 class="card-title text-center">Consultar veiculo</h4>
+
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" [style.width]="capacity + '%'">
+            </div>
+          </div>
+<table class="table  table-inverse ">
+  <thead class="thead-inverse">
+    <tr>
+      <th>modelo</th>
+      <th>montadora</th>
+      <th>cambio</th>
+      <th>numeroSerie</th>
+      <th>proprietario</th>
+      <th>ano</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let veiculo of veiculos">
+        <td scope="row">{{veiculo.modelo}} </td>
+        <td>{{veiculo.montadora}} </td>
+        <td>{{veiculo.numeroSerie}} </td>
+        <td>{{veiculo.cambio}} </td>
+        <td>{{veiculo.proprietario}} </td>
+        <td>{{veiculo.ano }}</td>
+
+      </tr>
+    
+    </tbody>
+</table>
+  
+        </div>
+  
+  
+  
+  </div>
+    </div>
+  
+  
+  
+  </div>
+  
+
+
+

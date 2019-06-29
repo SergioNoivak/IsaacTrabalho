@@ -10,6 +10,7 @@ export class ConsultarMedicoComponent implements OnInit {
 
 
   capacity=30;
+  medicos:any;
   constructor(private consultarMedicoService:ConsultarMedicoService) {   
      
 
@@ -21,7 +22,6 @@ export class ConsultarMedicoComponent implements OnInit {
     this.capacity=100;  
 
   })}
-  medicos:any;
   ngOnInit() {
 
 
