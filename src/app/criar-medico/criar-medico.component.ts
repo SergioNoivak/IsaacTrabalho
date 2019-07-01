@@ -3,7 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  FormBuilder
+  FormBuilder, Validators
 } from '@angular/forms';
 import {
   CriarMedicoService
@@ -24,10 +24,10 @@ export class CriarMedicoComponent implements OnInit {
   dadosCadastrados = false;
   medicoFormulario = this.fb.group({
 
-    nome: [''],
-    CRM: [''],
+    nome: ['', [Validators.minLength(6),Validators.required]],
+    CRM: ['',Validators.required],
     periodoAtendimento: [''],
-    CPF: [''],
+    CPF: ['',[Validators.pattern("[0-9]{3}[0-9]{3}[0-9]{3}[0-9]{2}"),Validators.required]],
     predio: [''],
     setor: ['']
 
@@ -42,20 +42,23 @@ export class CriarMedicoComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
+if(this.medicoFormulario.valid){
 
-    let medico: Medico = new Medico(
-      this.medicoFormulario.value.nome,
-      this.medicoFormulario.value.CRM,
-      this.medicoFormulario.value.periodoAtendimento,
-      this.medicoFormulario.value.CPF,
-      this.medicoFormulario.value.predio,
-      this.medicoFormulario.value.setor);
+  let medico: Medico = new Medico(
+    this.medicoFormulario.value.nome,
+    this.medicoFormulario.value.CRM,
+    this.medicoFormulario.value.periodoAtendimento,
+    this.medicoFormulario.value.CPF,
+    this.medicoFormulario.value.predio,
+    this.medicoFormulario.value.setor);
+    
+    this.criarMedicoService.cadastrarMedico(medico).subscribe(response => {
+      this.dadosValidos = response.success;
+      this.dadosCadastrados = response.success;
+    })
+    
+  }
 
-this.criarMedicoService.cadastrarMedico(medico).subscribe(response => {
-  this.dadosValidos = response.success;
-  this.dadosCadastrados = response.success;
-})
-
-    }
-
+  }
+  
 }

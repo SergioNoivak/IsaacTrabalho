@@ -3,7 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  FormBuilder
+  FormBuilder, Validators
 } from '@angular/forms';
 import Medico from '../../../model/Medico';
 import { CriarMedicoService } from '../criar-medico/criar-medico.service';
@@ -25,14 +25,18 @@ export class CriarVeiculoComponent implements OnInit {
   dadosCadastrados = false;
   veiculoFormulario = this.fb.group({
 
-    modelo: [''],
-    montadora: [''],
+    modelo: ['',Validators.required],
+    montadora: ['',Validators.required],
     cambio: [''],
-    numeroSerie: 0,
+    numeroSerie: [0,Validators.required],
     proprietario: [''],
     ano: ['']
 
   });
+
+
+
+
 
 
 
@@ -44,7 +48,8 @@ export class CriarVeiculoComponent implements OnInit {
 
   onSubmit() {
 
-    let veiculo: Veiculo = new Veiculo(
+    if(this.veiculoFormulario.valid){
+      let veiculo: Veiculo = new Veiculo(
       this.veiculoFormulario.value.modelo,
       this.veiculoFormulario.value.montadora,
       this.veiculoFormulario.value.cambio,
@@ -56,6 +61,7 @@ this.criarVeiculoService.cadastrar(veiculo).subscribe(response => {
   this.dadosValidos = response.success;
   this.dadosCadastrados = response.success;
 })
+    }
 
     }
 

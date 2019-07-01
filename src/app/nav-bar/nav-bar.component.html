@@ -17,12 +17,14 @@
 
     <div class="collapse navbar-collapse ml-5" id="navbarTogglerDemo03">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a [routerLink]="[ '/minha-conta']" name="" id="" class="btn btn-success" href="#" role="button">Minha Conta</a>
-        </li>
+        </li> -->
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-danger my-2 my-sm-0" type="submit">Sair</button>
+        <a [routerLink]="[ '/login']">
+          <button  class="btn btn-danger my-2 my-sm-0" type="submit">Sair</button>
+        </a>
       </form>
     </div>
   </nav>

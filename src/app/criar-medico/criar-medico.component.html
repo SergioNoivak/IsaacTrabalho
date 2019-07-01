@@ -18,10 +18,14 @@
 
         <form [formGroup]="medicoFormulario" (ngSubmit)="onSubmit()">
 
+
+            <div [hidden]="medicoFormulario.controls.nome.valid" class="alert alert-warning">Obrigatorio mais que 6 caracteres</div>
+ 
           <div class="form-group">
             <label for="">nome</label>
-            <input  formControlName="nome"  type="text" name="nome" id="" class="form-control" placeholder="" aria-describedby="helpId">
+            <input   formControlName="nome"  type="text" name="nome" id="" class="form-control" placeholder="" aria-describedby="helpId">
           </div>
+          <div [hidden]="medicoFormulario.controls.CRM.valid" class="alert alert-warning">CRM obrigatorio</div>
 
           <div class="form-group">
             <label for="">CRM</label>
@@ -37,6 +41,7 @@
             </select>
           </div>
 
+          <div [hidden]="medicoFormulario.controls.CPF.valid" class="alert alert-warning">CPF obrigatorio</div>
 
           <div class="form-group">
             <label for="">CPF</label>

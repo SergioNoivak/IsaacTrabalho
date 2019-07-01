@@ -17,12 +17,15 @@
           <div [hidden]="!dadosCadastrados" class="alert alert-success">O veiculo foi cadastrado com sucesso </div>
   
           <form [formGroup]="veiculoFormulario" (ngSubmit)="onSubmit()">
+              <div [hidden]="veiculoFormulario.controls.modelo.valid" class="alert alert-warning">modelo obrigatorio</div>
   
             <div class="form-group">
               <label for="">modelo</label>
               <input  formControlName="modelo"  type="text" name="nome" id="" class="form-control" placeholder="" aria-describedby="helpId">
             </div>
   
+          <div [hidden]="veiculoFormulario.controls.montadora.valid" class="alert alert-warning">montadora obrigatorio</div>
+
             <div class="form-group">
               <label for="">montadora</label>
               <input formControlName="montadora"  type="text" name="CRM" id="" class="form-control" placeholder="" aria-describedby="helpId">
@@ -36,6 +39,7 @@
               </select>
             </div>
   
+            <div [hidden]="veiculoFormulario.controls.numeroSerie.valid" class="alert alert-warning">numero de serie obrigatorio</div>
   
             <div class="form-group">
               <label for="">numero de serie</label>
